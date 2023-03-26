@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <Head>
         <title>gnNews</title>
-        <meta name='description' content='Home page of gnNews application' />
+        <meta name='description' content='gnNews application home page' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

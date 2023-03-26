@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Flex } from "@chakra-ui/react";
-import { Header, Body, Footer } from "./layout-components";
+import { Header, Body, Footer } from "@/layout";
 import type { LayoutProps } from "@/types";
 
 export const MainLayout = ({ children }: LayoutProps) => {

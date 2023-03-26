@@ -13,3 +13,7 @@ export interface Country {
   id: string;
   flag: { src: string };
 }
+
+export interface NewsListProps {
+  country: string | string[] | undefined;
+}
