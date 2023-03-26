@@ -3,16 +3,10 @@ import { selectAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
-export interface Country {
-  name: string;
-  id: string;
-  flag: { src: string };
-}
+import type { Country } from "@/types";
 
 export default function Home() {
   const countries = useSelector(selectAllCountries);
-  console.log(countries);
 
   const content = countries.map((country: Country) => (
     <Link key={country.id} href={`/country/${country.id}`}>

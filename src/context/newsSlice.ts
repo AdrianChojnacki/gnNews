@@ -11,7 +11,7 @@ export interface NewsState {
 
 const initialState: NewsState = {
   news: [],
-  status: "idle", // 'idle' | 'loading' | 'succeeded' | 'failed'
+  status: "idle",
   error: null,
 };
 
