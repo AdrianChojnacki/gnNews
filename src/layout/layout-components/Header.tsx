@@ -1,4 +1,6 @@
 import { Container, Box, Flex } from "@chakra-ui/react";
+import { LayoutToggleButton } from "@/components";
+
 import Link from "next/link";
 
 export const Header = () => {
@@ -9,7 +11,9 @@ export const Header = () => {
           <Box>
             <Link href='/'>gnNews</Link>
           </Box>
-          <Box>Utils</Box>
+          <Box>
+            <LayoutToggleButton />
+          </Box>
         </Flex>
       </Container>
     </Box>

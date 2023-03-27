@@ -1,1 +1,1 @@
-export * from "./getNewsListContent";
+export * from "./getFormattedDate";

@@ -17,3 +17,15 @@ export interface Country {
 export interface NewsListProps {
   country: string | string[] | undefined;
 }
+
+export interface NewsCardProps {
+  author: string;
+  title: string;
+  description: string;
+  content: string;
+  publishedAt: string;
+  source: {
+    id: string;
+    name: string;
+  };
+}

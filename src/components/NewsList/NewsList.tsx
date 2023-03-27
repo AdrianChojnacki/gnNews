@@ -6,7 +6,7 @@ import {
   getNewsError,
   fetchNews,
 } from "@/context/newsSlice";
-import { LoadingSpinner } from "@/components";
+import { LoadingSpinner, NewsGrid } from "@/components";
 import type { NewsListProps } from "@/types";
 
 export const NewsList: FunctionComponent<NewsListProps> = ({ country }) => {
@@ -16,18 +16,15 @@ export const NewsList: FunctionComponent<NewsListProps> = ({ country }) => {
   const newsError = useSelector(getNewsError);
 
   useEffect(() => {
-    if (country && newsStatus === "idle") {
-      dispatch(fetchNews(country));
-    }
-  }, [country, newsStatus, dispatch]);
-  console.log(news);
+    if (country) dispatch(fetchNews(country));
+  }, [country, dispatch]);
 
   let content;
 
   if (newsStatus === "loading") {
     content = <LoadingSpinner />;
   } else if (newsStatus === "succeeded") {
-    content = <p>Liczba newsów: {news.length}</p>;
+    content = <NewsGrid news={news} />;
   } else if (newsStatus === "failed") {
     content = <p>{newsError}</p>;
   }
