@@ -3,10 +3,7 @@ import { useSelector } from "react-redux";
 import { getLayoutState } from "@/context/layoutSlice";
 import { Box, Flex } from "@chakra-ui/react";
 import { NewsCard } from "@/components";
-
-export interface NewsGridProps {
-  news: object[];
-}
+import type { NewsGridProps } from "@/types";
 
 export const NewsGrid = ({ news }: NewsGridProps) => {
   const layout = useSelector(getLayoutState);

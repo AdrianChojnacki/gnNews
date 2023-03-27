@@ -18,6 +18,10 @@ export interface NewsListProps {
   country: string | string[] | undefined;
 }
 
+export interface NewsGridProps {
+  news: object[];
+}
+
 export interface NewsCardProps {
   author: string;
   title: string;
