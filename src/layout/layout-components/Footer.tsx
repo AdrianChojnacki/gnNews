@@ -1,9 +1,9 @@
-import { Container } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 
 export const Footer = () => {
   return (
-    <Container maxW='7xl' bg='blue.200'>
-      Footer
-    </Container>
+    <Box bg='blue.200'>
+      <Container maxW='7xl'>Footer</Container>
+    </Box>
   );
 };

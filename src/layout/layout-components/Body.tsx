@@ -8,11 +8,13 @@ export const Body = ({ hasSidebar, children }: LayoutBodyProps) => {
   if (hasSidebar) sidebar = <Sidebar />;
 
   return (
-    <Container flex='1' position='relative' maxW='7xl' bg='blue.50'>
-      <Flex h='100%'>
-        {sidebar}
-        <Box flex='1'>{children}</Box>
-      </Flex>
-    </Container>
+    <Box flex='1' bg='blue.50'>
+      <Container position='relative' maxW='7xl'>
+        <Flex h='100%'>
+          {sidebar}
+          <Box flex='1'>{children}</Box>
+        </Flex>
+      </Container>
+    </Box>
   );
 };

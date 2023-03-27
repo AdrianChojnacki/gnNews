@@ -3,13 +3,15 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <Container maxW='7xl' bg='blue.100'>
-      <Flex alignItems='center' justifyContent='space-between'>
-        <Box>
-          <Link href='/'>gnNews</Link>
-        </Box>
-        <Box>Utils</Box>
-      </Flex>
-    </Container>
+    <Box bg='blue.100'>
+      <Container maxW='7xl'>
+        <Flex alignItems='center' justifyContent='space-between'>
+          <Box>
+            <Link href='/'>gnNews</Link>
+          </Box>
+          <Box>Utils</Box>
+        </Flex>
+      </Container>
+    </Box>
   );
 };
