@@ -1,20 +1,16 @@
-import { Box, Container, Flex } from "@chakra-ui/react";
-import { Sidebar } from "@/layout";
+import { Box, Flex } from "@chakra-ui/react";
+import { LayoutContainer, Sidebar } from "@/layout";
 import type { LayoutBodyProps } from "@/types";
 
-export const Body = ({ hasSidebar, children }: LayoutBodyProps) => {
-  let sidebar;
-
-  if (hasSidebar) sidebar = <Sidebar />;
-
+export const Body = ({ showSidebar, children }: LayoutBodyProps) => {
   return (
     <Box flex='1' position='relative' bg='blue.50'>
-      <Container maxW='7xl'>
+      <LayoutContainer>
         <Flex h='100%'>
-          {sidebar}
+          {showSidebar && <Sidebar />}
           <Box flex='1'>{children}</Box>
         </Flex>
-      </Container>
+      </LayoutContainer>
     </Box>
   );
 };

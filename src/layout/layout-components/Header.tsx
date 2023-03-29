@@ -1,21 +1,21 @@
-import { Container, Box, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+import { LayoutContainer } from "@/layout";
 import { LayoutToggleButton } from "@/components";
+import type { LayoutHeaderProps } from "@/types";
 
 import Link from "next/link";
 
-export const Header = () => {
+export const Header = ({ showLayoutButton }: LayoutHeaderProps) => {
   return (
     <Box bg='blue.100'>
-      <Container maxW='7xl'>
+      <LayoutContainer>
         <Flex alignItems='center' justifyContent='space-between'>
           <Box>
             <Link href='/'>gnNews</Link>
           </Box>
-          <Box>
-            <LayoutToggleButton />
-          </Box>
+          <Box>{showLayoutButton && <LayoutToggleButton />}</Box>
         </Flex>
-      </Container>
+      </LayoutContainer>
     </Box>
   );
 };

@@ -8,13 +8,14 @@ export const MainLayout = ({ children }: LayoutProps) => {
     query: { country },
   } = useRouter();
 
-  const hasSidebar = country ? true : false;
+  const showLayoutButton = country ? true : false;
+  const showSidebar = country ? true : false;
   const showNewsAmount = country ? true : false;
 
   return (
     <Flex flexDirection='column' height='100vh'>
-      <Header />
-      <Body hasSidebar={hasSidebar}>{children}</Body>
+      <Header showLayoutButton={showLayoutButton} />
+      <Body showSidebar={showSidebar}>{children}</Body>
       <Footer showNewsAmount={showNewsAmount} />
     </Flex>
   );

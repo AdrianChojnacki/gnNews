@@ -4,8 +4,12 @@ export interface LayoutProps {
   children: ReactNode;
 }
 
+export interface LayoutHeaderProps {
+  showLayoutButton: boolean;
+}
+
 export interface LayoutBodyProps extends LayoutProps {
-  hasSidebar: boolean;
+  showSidebar: boolean;
 }
 
 export interface LayoutFooterProps {
