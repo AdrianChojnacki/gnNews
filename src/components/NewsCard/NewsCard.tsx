@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { getLayoutState } from "@/context/layoutSlice";
 import {
+  Card,
   CardHeader,
   CardBody,
   CardFooter,
@@ -12,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 import { NewsModal } from "@/components";
 import { getFormattedDate } from "@/helpers";
-import { StyledCard } from "./NewsCard.styles";
 import defaultImage from "public/news.jpg";
 import type { NewsCardProps } from "@/types";
 
@@ -31,7 +31,7 @@ export const NewsCard = ({
   const date = getFormattedDate(publishedAt);
 
   return (
-    <StyledCard h='100%' onClick={onOpen}>
+    <Card h='100%' cursor='pointer' onClick={onOpen}>
       <CardHeader pb={0}>
         {layout === "tiles" && (
           <Image
@@ -68,6 +68,6 @@ export const NewsCard = ({
         isOpen={isOpen}
         onClose={onClose}
       />
-    </StyledCard>
+    </Card>
   );
 };
