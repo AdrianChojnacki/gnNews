@@ -8,6 +8,10 @@ export interface LayoutBodyProps extends LayoutProps {
   hasSidebar: boolean;
 }
 
+export interface LayoutFooterProps {
+  showNewsAmount: boolean;
+}
+
 export interface Country {
   name: string;
   id: string;

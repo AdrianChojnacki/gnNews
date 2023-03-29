@@ -9,12 +9,13 @@ export const MainLayout = ({ children }: LayoutProps) => {
   } = useRouter();
 
   const hasSidebar = country ? true : false;
+  const showNewsAmount = country ? true : false;
 
   return (
     <Flex flexDirection='column' height='100vh'>
       <Header />
       <Body hasSidebar={hasSidebar}>{children}</Body>
-      <Footer />
+      <Footer showNewsAmount={showNewsAmount} />
     </Flex>
   );
 };
