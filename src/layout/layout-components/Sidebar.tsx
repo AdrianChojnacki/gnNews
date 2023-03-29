@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectAllCountries } from "@/context/countriesSlice";
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Country } from "@/types";
@@ -14,5 +14,9 @@ export const Sidebar = () => {
     </Link>
   ));
 
-  return <Box>{content}</Box>;
+  return (
+    <Flex flexDirection={["row", "column"]} flexWrap='wrap' gap={2}>
+      {content}
+    </Flex>
+  );
 };

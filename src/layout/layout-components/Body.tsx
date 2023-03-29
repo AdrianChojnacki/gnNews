@@ -6,7 +6,7 @@ export const Body = ({ showSidebar, children }: LayoutBodyProps) => {
   return (
     <Box flex='1' position='relative' bg='blue.50'>
       <LayoutContainer>
-        <Flex h='100%'>
+        <Flex flexDirection={["column", "row"]} gap={4} h='100%'>
           {showSidebar && <Sidebar />}
           <Box flex='1'>{children}</Box>
         </Flex>
