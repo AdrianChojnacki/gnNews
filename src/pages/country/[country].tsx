@@ -10,8 +10,11 @@ export default function Country() {
   return (
     <>
       <Head>
-        <title>gnNews</title>
-        <meta name='description' content='gnNews application home page' />
+        <title>gnNews {country}</title>
+        <meta
+          name='description'
+          content={`gnNews application ${country} page`}
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

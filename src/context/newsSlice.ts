@@ -19,7 +19,9 @@ export const fetchNews: any = createAsyncThunk(
   "news/fetchNews",
   async (country) => {
     try {
-      const response = await fetch(`${API_URL}?country=${country}&${API_KEY}`);
+      const response = await fetch(
+        `${API_URL}?country=${country}&apiKey=${API_KEY}`
+      );
       const data = await response.json();
       const news = data.articles;
       return news;

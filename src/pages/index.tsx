@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+import { Flex, Text, Image } from "@chakra-ui/react";
 import type { Country } from "@/types";
 
 export default function Home() {
@@ -13,8 +13,9 @@ export default function Home() {
       <Image
         src={country.flag.src}
         alt={country.name}
-        width={100}
-        height={100}
+        width={150}
+        height={150}
+        borderRadius={5}
       />
     </Link>
   ));
@@ -27,8 +28,12 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <p>Home</p>
-      {content}
+      <Text mb={4} fontSize='xl'>
+        Select country
+      </Text>
+      <Flex flexWrap='wrap' gap={4}>
+        {content}
+      </Flex>
     </>
   );
 }

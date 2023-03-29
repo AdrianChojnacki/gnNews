@@ -3,7 +3,7 @@ import type { LayoutProps } from "@/types";
 
 export const LayoutContainer = ({ children }: LayoutProps) => {
   return (
-    <Container maxW='7xl' py={2}>
+    <Container maxW='7xl' py={4}>
       {children}
     </Container>
   );

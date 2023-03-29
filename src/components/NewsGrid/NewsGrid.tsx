@@ -19,9 +19,5 @@ export const NewsGrid = ({ news }: NewsGridProps) => {
     )
   );
 
-  return (
-    <Flex flexWrap='wrap' p={2}>
-      {content}
-    </Flex>
-  );
+  return <Flex flexWrap='wrap'>{content}</Flex>;
 };
