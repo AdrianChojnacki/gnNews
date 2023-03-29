@@ -23,13 +23,24 @@ export interface NewsGridProps {
 }
 
 export interface NewsCardProps {
-  author: string;
+  urlToImage: string;
   title: string;
   description: string;
-  content: string;
-  publishedAt: string;
   source: {
     id: string;
     name: string;
   };
+  publishedAt: string;
+  content: string;
+  author: string;
+  url: string;
+}
+
+export interface NewsModalProps {
+  title: string;
+  content: string;
+  author: string;
+  url: string;
+  isOpen: boolean;
+  onClose: () => void;
 }

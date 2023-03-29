@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { getLayoutState } from "@/context/layoutSlice";
 import {
-  Card,
   CardHeader,
   CardBody,
   CardFooter,
@@ -9,30 +8,45 @@ import {
   Text,
   Flex,
   Image,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { NewsModal } from "@/components";
 import { getFormattedDate } from "@/helpers";
-import image from "public/news.jpg";
+import { StyledCard } from "./NewsCard.styles";
+import defaultImage from "public/news.jpg";
 import type { NewsCardProps } from "@/types";
 
 export const NewsCard = ({
-  author,
+  urlToImage,
   title,
   description,
-  content,
-  publishedAt,
   source,
+  publishedAt,
+  content,
+  author,
+  url,
 }: NewsCardProps) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const layout = useSelector(getLayoutState);
   const date = getFormattedDate(publishedAt);
 
   return (
-    <Card h='100%'>
+    <StyledCard h='100%' onClick={onOpen}>
       <CardHeader pb={0}>
-        {layout === "tiles" && <Image src={image.src} alt={title} />}
-        <Heading size='sm'>{title}</Heading>
+        {layout === "tiles" && (
+          <Image
+            mb={3}
+            width='100%'
+            height='250px'
+            objectFit='cover'
+            src={urlToImage ? urlToImage : defaultImage.src}
+            alt={title}
+          />
+        )}
+        <Heading size='md'>{title}</Heading>
       </CardHeader>
-      {layout === "tiles" && (
-        <CardBody>
+      {layout === "tiles" && description && (
+        <CardBody pb={0}>
           <Text mb={2}>{description}</Text>
         </CardBody>
       )}
@@ -46,6 +60,14 @@ export const NewsCard = ({
           </Text>
         </Flex>
       </CardFooter>
-    </Card>
+      <NewsModal
+        title={title}
+        content={content}
+        author={author}
+        url={url}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
+    </StyledCard>
   );
 };

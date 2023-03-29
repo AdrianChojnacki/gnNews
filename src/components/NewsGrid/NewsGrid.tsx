@@ -7,6 +7,7 @@ import type { NewsGridProps } from "@/types";
 
 export const NewsGrid = ({ news }: NewsGridProps) => {
   const layout = useSelector(getLayoutState);
+  console.log(news);
 
   const colWidth = layout === "list" ? "100%" : "50%";
 
