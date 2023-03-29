@@ -6,3 +6,4 @@ export * from "./LayoutToggleButton";
 export * from "./NewsModal";
 export * from "./NewsAmount";
 export * from "./Clock";
+export * from "./InfoButton";
