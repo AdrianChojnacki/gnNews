@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useSelector } from "react-redux";
 import { getLayoutState } from "@/context/layoutSlice";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
 import { NewsCard } from "@/components";
 import type { NewsGridProps } from "@/types";
 
@@ -9,15 +9,23 @@ export const NewsGrid = ({ news }: NewsGridProps) => {
   const layout = useSelector(getLayoutState);
   console.log(news);
 
-  const colWidth = layout === "list" ? "100%" : "50%";
+  const mobileGrid = "repeat(1, 1fr)";
+  const columns = layout === "list" ? 1 : 2;
 
   const content = news.map(
     (item: any): ReactNode => (
-      <Box key={item.title} w={colWidth} p={2}>
+      <GridItem key={item.title}>
         <NewsCard {...item} />
-      </Box>
+      </GridItem>
     )
   );
 
-  return <Flex flexWrap='wrap'>{content}</Flex>;
+  return (
+    <Grid
+      templateColumns={[mobileGrid, mobileGrid, `repeat(${columns}, 1fr)`]}
+      gap={4}
+    >
+      {content}
+    </Grid>
+  );
 };
