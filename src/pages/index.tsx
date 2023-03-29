@@ -2,22 +2,24 @@ import { useSelector } from "react-redux";
 import { selectAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
-import { Flex, Text, Image } from "@chakra-ui/react";
+import { Flex, Text, Image, Grid, GridItem } from "@chakra-ui/react";
 import type { Country } from "@/types";
 
 export default function Home() {
   const countries = useSelector(selectAllCountries);
 
   const content = countries.map((country: Country) => (
-    <Link key={country.id} href={`/country/${country.id}`}>
-      <Image
-        src={country.flag.src}
-        alt={country.name}
-        width={150}
-        height={150}
-        borderRadius={5}
-      />
-    </Link>
+    <GridItem key={country.id}>
+      <Link href={`/country/${country.id}`}>
+        <Image
+          src={country.flag.src}
+          alt={country.name}
+          width='100%'
+          objectFit='contain'
+          borderRadius={5}
+        />
+      </Link>
+    </GridItem>
   ));
 
   return (
@@ -31,9 +33,17 @@ export default function Home() {
       <Text mb={4} fontSize='xl'>
         Select country
       </Text>
-      <Flex flexWrap='wrap' gap={4}>
+      <Grid
+        templateColumns={[
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+          "repeat(4, 1fr)",
+          "repeat(5, 1fr)",
+        ]}
+        gap={4}
+      >
         {content}
-      </Flex>
+      </Grid>
     </>
   );
 }

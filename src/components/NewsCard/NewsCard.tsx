@@ -32,24 +32,22 @@ export const NewsCard = ({
 
   return (
     <Card h='100%' cursor='pointer' onClick={onOpen}>
-      <CardHeader pb={0}>
+      <CardHeader>
         {layout === "tiles" && (
           <Image
-            mb={3}
+            src={urlToImage ? urlToImage : defaultImage.src}
+            alt={title}
             width='100%'
             height='250px'
             objectFit='cover'
-            src={urlToImage ? urlToImage : defaultImage.src}
-            alt={title}
+            mb={3}
           />
         )}
         <Heading size='md'>{title}</Heading>
       </CardHeader>
-      {layout === "tiles" && description && (
-        <CardBody pb={0}>
-          <Text mb={2}>{description}</Text>
-        </CardBody>
-      )}
+      <CardBody py={0}>
+        {layout === "tiles" && description && <Text mb={2}>{description}</Text>}
+      </CardBody>
       <CardFooter>
         <Flex justifyContent='space-between' w='100%'>
           <Text fontSize='sm' textAlign='right'>
