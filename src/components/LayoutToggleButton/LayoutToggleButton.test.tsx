@@ -27,7 +27,12 @@ describe("LayoutToggleButton component", () => {
 
     fireEvent.click(button);
 
-    const layoutState = store.getState().layout.layout;
+    let layoutState = store.getState().layout.layout;
+    expect(layoutState).toBe("list");
+
+    fireEvent.click(button);
+
+    layoutState = store.getState().layout.layout;
     expect(layoutState).toBe("tiles");
   });
 });

@@ -1,6 +1,6 @@
 import { Box, ButtonGroup, Flex, Text } from "@chakra-ui/react";
 import { LayoutContainer } from "@/layout";
-import { InfoButton, LayoutToggleButton } from "@/components";
+import { InfoButton, LangToggleButton, LayoutToggleButton } from "@/components";
 import type { LayoutHeaderProps } from "@/types";
 
 import Link from "next/link";
@@ -17,6 +17,7 @@ export const Header = ({ showLayoutButton }: LayoutHeaderProps) => {
           </Link>
           <ButtonGroup spacing='0'>
             {showLayoutButton && <LayoutToggleButton />}
+            <LangToggleButton />
             <InfoButton />
           </ButtonGroup>
         </Flex>

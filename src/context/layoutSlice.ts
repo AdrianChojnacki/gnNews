@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { layout: "list" };
+const initialState = { layout: "tiles" };
 
 const layoutSlice = createSlice({
   name: "layout",
   initialState,
   reducers: {
     toggleLayout: (state) => {
-      if (state.layout === "list") {
-        state.layout = "tiles";
-      } else {
+      if (state.layout === "tiles") {
         state.layout = "list";
+      } else {
+        state.layout = "tiles";
       }
     },
   },

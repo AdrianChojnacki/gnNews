@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getLayoutState, toggleLayout } from "@/context/layoutSlice";
-import { TfiViewList, TfiViewGrid } from "react-icons/tfi";
 import { Button } from "@chakra-ui/react";
+import { TfiViewList, TfiViewGrid } from "react-icons/tfi";
 
 export const LayoutToggleButton = () => {
   const layout = useSelector(getLayoutState);
   const dispatch = useDispatch();
 
-  const icon = layout === "list" ? <TfiViewGrid /> : <TfiViewList />;
+  const icon = layout === "tiles" ? <TfiViewGrid /> : <TfiViewList />;
 
   return (
     <Button

@@ -7,7 +7,6 @@ import type { NewsGridProps } from "@/types";
 
 export const NewsGrid = ({ news }: NewsGridProps) => {
   const layout = useSelector(getLayoutState);
-  console.log(news);
 
   const mobileGrid = "repeat(1, 1fr)";
   const columns = layout === "list" ? 1 : 2;
