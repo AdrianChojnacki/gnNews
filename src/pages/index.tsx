@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
-import { Flex, Text, Image, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Text, Image, Grid, GridItem } from "@chakra-ui/react";
 import type { Country } from "@/types";
 
 export default function Home() {
@@ -30,20 +30,22 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Text mb={4} fontSize='xl'>
-        Select country
-      </Text>
-      <Grid
-        templateColumns={[
-          "repeat(2, 1fr)",
-          "repeat(3, 1fr)",
-          "repeat(4, 1fr)",
-          "repeat(5, 1fr)",
-        ]}
-        gap={4}
-      >
-        {content}
-      </Grid>
+      <Box>
+        <Text mb={4} fontSize='xl'>
+          Select country
+        </Text>
+        <Grid
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(5, 1fr)",
+          ]}
+          gap={4}
+        >
+          {content}
+        </Grid>
+      </Box>
     </>
   );
 }

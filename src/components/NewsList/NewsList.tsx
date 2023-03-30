@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  selectAllNews,
+  getAllNews,
   getNewsStatus,
   getNewsError,
   fetchNews,
@@ -11,7 +11,7 @@ import type { NewsListProps } from "@/types";
 
 export const NewsList: FunctionComponent<NewsListProps> = ({ country }) => {
   const dispatch = useDispatch();
-  const news = useSelector(selectAllNews);
+  const news = useSelector(getAllNews);
   const newsStatus = useSelector(getNewsStatus);
   const newsError = useSelector(getNewsError);
 

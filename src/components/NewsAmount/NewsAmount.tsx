@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { selectAllNews, getNewsStatus } from "@/context/newsSlice";
+import { getAllNews, getNewsStatus } from "@/context/newsSlice";
 import { Text } from "@chakra-ui/react";
 
 export const NewsAmount = () => {
-  const news = useSelector(selectAllNews);
+  const news = useSelector(getAllNews);
   const newsStatus = useSelector(getNewsStatus);
 
   let amount;

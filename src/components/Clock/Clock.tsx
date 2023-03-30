@@ -13,5 +13,5 @@ export const Clock = () => {
 
   if (!hydrated) return null;
 
-  return <Box>{time.toLocaleTimeString()}</Box>;
+  return <Box data-testid='clock'>{time.toLocaleTimeString()}</Box>;
 };

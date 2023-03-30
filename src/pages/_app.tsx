@@ -1,4 +1,4 @@
-import { store } from "../context/store";
+import { store } from "@/context/store";
 import { Provider as ReduxProvider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
 import { MainLayout } from "@/layout";

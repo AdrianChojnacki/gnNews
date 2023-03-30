@@ -51,7 +51,7 @@ const newsSLice = createSlice({
   },
 });
 
-export const selectAllNews = (state: any) => state.news.news;
+export const getAllNews = (state: any) => state.news.news;
 export const getNewsStatus = (state: any) => state.news.status;
 export const getNewsError = (state: any) => state.news.error;
 
