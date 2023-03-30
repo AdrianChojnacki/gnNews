@@ -14,7 +14,7 @@ import {
 import { NewsModal } from "@/components";
 import { getFormattedDate } from "@/helpers";
 import defaultImage from "public/news.jpg";
-import type { NewsCardProps } from "@/types";
+import type { OnlyStrings, Source } from "@/types";
 
 export const NewsCard = ({
   urlToImage,
@@ -25,7 +25,7 @@ export const NewsCard = ({
   content,
   author,
   url,
-}: NewsCardProps) => {
+}: OnlyStrings & Source) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const layout = useSelector(getLayoutState);
   const date = getFormattedDate(publishedAt);

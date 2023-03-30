@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectAllCountries } from "@/context/countriesSlice";
+import { getAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
 import { Box, Text, Image, Grid, GridItem } from "@chakra-ui/react";
@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import type { Country } from "@/types";
 
 export default function Home() {
-  const countries = useSelector(selectAllCountries);
+  const countries = useSelector(getAllCountries);
   const { t } = useTranslation();
 
   const content = countries.map((country: Country) => (

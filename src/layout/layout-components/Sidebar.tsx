@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
-import { selectAllCountries } from "@/context/countriesSlice";
+import { getAllCountries } from "@/context/countriesSlice";
 import { Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Country } from "@/types";
 
 export const Sidebar = () => {
-  const countries = useSelector(selectAllCountries);
+  const countries = useSelector(getAllCountries);
 
   const content = countries.map((country: Country) => (
     <Link key={country.id} href={`/country/${country.id}`}>

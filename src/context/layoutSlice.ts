@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { LayoutState } from "@/types";
 
 const initialState = { layout: "tiles" };
 
@@ -16,7 +17,7 @@ const layoutSlice = createSlice({
   },
 });
 
-export const getLayoutState = (state: any) => state.layout.layout;
+export const getLayoutState = (state: LayoutState) => state.layout.layout;
 export const { toggleLayout } = layoutSlice.actions;
 
 export default layoutSlice.reducer;

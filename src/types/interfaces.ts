@@ -22,26 +22,16 @@ export interface Country {
   flag: { src: string };
 }
 
+export interface Countries {
+  countries: Country[];
+}
+
 export interface NewsListProps {
   country: string | string[] | undefined;
 }
 
 export interface NewsGridProps {
   news: object[];
-}
-
-export interface NewsCardProps {
-  urlToImage: string;
-  title: string;
-  description: string;
-  source: {
-    id: string;
-    name: string;
-  };
-  publishedAt: string;
-  content: string;
-  author: string;
-  url: string;
 }
 
 export interface NewsModalProps {
@@ -51,4 +41,34 @@ export interface NewsModalProps {
   url: string;
   isOpen: boolean;
   onClose: () => void;
+}
+
+export interface OnlyStrings {
+  [key: string]: string;
+}
+
+export interface Source {
+  source: {
+    [key: string]: string;
+  };
+}
+
+export interface LayoutState {
+  layout: {
+    layout: string;
+  };
+}
+
+export interface NewsState {
+  news: object[];
+  status: string;
+  error: unknown;
+}
+
+export interface NewsSelector {
+  news: {
+    news: object[];
+    status: string;
+    error: any;
+  };
 }

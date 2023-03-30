@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getAllNews,
@@ -9,7 +9,7 @@ import {
 import { LoadingSpinner, NewsGrid } from "@/components";
 import type { NewsListProps } from "@/types";
 
-export const NewsList: FunctionComponent<NewsListProps> = ({ country }) => {
+export const NewsList = ({ country }: NewsListProps) => {
   const dispatch = useDispatch();
   const news = useSelector(getAllNews);
   const newsStatus = useSelector(getNewsStatus);

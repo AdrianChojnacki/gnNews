@@ -1,13 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import type { NewsState, NewsSelector } from "@/types";
 
-const API_URL: any = process.env.NEXT_PUBLIC_API_URL;
-const API_KEY: any = process.env.NEXT_PUBLIC_API_KEY;
-
-export interface NewsState {
-  news: any;
-  status: string;
-  error: any;
-}
+const API_URL: string | undefined = process.env.NEXT_PUBLIC_API_URL;
+const API_KEY: string | undefined = process.env.NEXT_PUBLIC_API_KEY;
 
 const initialState: NewsState = {
   news: [],
@@ -51,8 +46,8 @@ const newsSLice = createSlice({
   },
 });
 
-export const getAllNews = (state: any) => state.news.news;
-export const getNewsStatus = (state: any) => state.news.status;
-export const getNewsError = (state: any) => state.news.error;
+export const getAllNews = (state: NewsSelector) => state.news.news;
+export const getNewsStatus = (state: NewsSelector) => state.news.status;
+export const getNewsError = (state: NewsSelector) => state.news.error;
 
 export default newsSLice.reducer;

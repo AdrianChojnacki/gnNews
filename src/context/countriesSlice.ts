@@ -9,6 +9,7 @@ import inFlag from "public/countries/in.svg";
 import plFlag from "public/countries/pl.svg";
 import saFlag from "public/countries/sa.svg";
 import usFlag from "public/countries/us.svg";
+import type { Countries } from "@/types";
 
 const initialState = [
   { name: "Argentina", id: "ar", flag: arFlag },
@@ -29,6 +30,6 @@ const countriesSlice = createSlice({
   reducers: {},
 });
 
-export const selectAllCountries = (state: any) => state.countries;
+export const getAllCountries = (state: Countries) => state.countries;
 
 export default countriesSlice.reducer;

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { useSelector } from "react-redux";
 import { getLayoutState } from "@/context/layoutSlice";
-import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { NewsCard } from "@/components";
 import type { NewsGridProps } from "@/types";
 
