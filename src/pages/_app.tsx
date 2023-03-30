@@ -2,6 +2,7 @@ import { store } from "@/context/store";
 import { Provider as ReduxProvider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
 import { MainLayout } from "@/layout";
+import "../i18n";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {

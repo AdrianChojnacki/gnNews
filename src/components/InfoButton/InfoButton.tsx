@@ -11,9 +11,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 export const InfoButton = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -28,15 +30,13 @@ export const InfoButton = () => {
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Wyzwanie</ModalHeader>
+          <ModalHeader>{t("challenge")}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>
-              Największym wyzwaniem było odpowiednie otypowanie całości :)
-            </Text>
+            <Text>{t("theBiggestChallengeWas")}</Text>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Zamknij</Button>
+            <Button onClick={onClose}>{t("close")}</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

@@ -3,10 +3,12 @@ import { selectAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
 import Link from "next/link";
 import { Box, Text, Image, Grid, GridItem } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import type { Country } from "@/types";
 
 export default function Home() {
   const countries = useSelector(selectAllCountries);
+  const { t } = useTranslation();
 
   const content = countries.map((country: Country) => (
     <GridItem key={country.id}>
@@ -32,7 +34,7 @@ export default function Home() {
       </Head>
       <Box>
         <Text mb={4} fontSize='xl'>
-          Select country
+          {t("selectCountry")}
         </Text>
         <Grid
           templateColumns={[

@@ -10,6 +10,7 @@ import {
   Text,
   Link,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import type { NewsModalProps } from "@/types";
 
 export const NewsModal = ({
@@ -20,6 +21,8 @@ export const NewsModal = ({
   isOpen,
   onClose,
 }: NewsModalProps) => {
+  const { t } = useTranslation();
+
   return (
     <Modal
       size='xl'
@@ -36,11 +39,11 @@ export const NewsModal = ({
           <Text mb={2}>{content}</Text>
           <Text fontSize='sm'>{author}</Text>
           <Link href={url} isExternal color='blue.500' fontSize='sm'>
-            Link to full article
+            {t("linkToFullArticle")}
           </Link>
         </ModalBody>
         <ModalFooter pt={0}>
-          <Button onClick={onClose}>Close</Button>
+          <Button onClick={onClose}>{t("close")}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
