@@ -6,6 +6,7 @@ import {
   getNewsError,
   fetchNews,
 } from "@/context/newsSlice";
+import { Text } from "@chakra-ui/react";
 import { LoadingSpinner, NewsGrid } from "@/components";
 import type { NewsListProps } from "@/types";
 
@@ -26,7 +27,7 @@ export const NewsList = ({ country }: NewsListProps) => {
   } else if (newsStatus === "succeeded") {
     content = <NewsGrid news={news} />;
   } else if (newsStatus === "failed") {
-    content = <p>{newsError}</p>;
+    content = <Text>{newsError}</Text>;
   }
 
   return <>{content}</>;

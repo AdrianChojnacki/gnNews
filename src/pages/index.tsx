@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { getAllCountries } from "@/context/countriesSlice";
 import Head from "next/head";
-import Link from "next/link";
-import { Box, Text, Image, Grid, GridItem } from "@chakra-ui/react";
+import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
+import { CountryCard } from "@/components";
 import { useTranslation } from "react-i18next";
 import type { Country } from "@/types";
 
@@ -12,15 +12,7 @@ export default function Home() {
 
   const content = countries.map((country: Country) => (
     <GridItem key={country.id}>
-      <Link href={`/country/${country.id}`}>
-        <Image
-          src={country.flag.src}
-          alt={country.name}
-          width='100%'
-          objectFit='contain'
-          borderRadius={5}
-        />
-      </Link>
+      <CountryCard {...country} />
     </GridItem>
   ));
 
